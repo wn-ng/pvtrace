@@ -71,7 +71,7 @@ class Mesh(Geometry):
             raise GeometryError(
                 "Mesh must have a single closest point to calculate normal."
             )
-        if not np.any(np.absolute(distances) < EPS_ZERO):
+        if not np.any(np.absolute(distances) < EPS_ZERO*100):
             raise GeometryError(
                 "Point is not on surface.",
                 {
